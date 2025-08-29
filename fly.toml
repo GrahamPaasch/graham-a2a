@@ -1,0 +1,15 @@
+app = "graham-a2a-agent"
+primary_region = "iad"
+[build]
+  dockerfile = "apps/agent/Dockerfile"
+[env]
+  PORT = "8787"
+[[services]]
+  internal_port = 8787
+  protocol = "tcp"
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]

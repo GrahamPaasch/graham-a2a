@@ -1,0 +1,35 @@
+{
+  "name": "@graham/shared",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "validate-agent-card": "dist/validate-card.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "rimraf dist",
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+  "@types/node": "^20.12.12",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.1",
+    "rimraf": "^6.0.1",
+    "eslint": "^8.57.0",
+    "zod": "^3.23.8"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  }
+}
